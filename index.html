@@ -6,8 +6,6 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.17e50649.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Playground</title>
-  <!-- <script type="module" crossorigin src="/assets/index.520684f6.js"></script>
-  <link rel="stylesheet" href="/assets/index.a12b6392.css"> -->
   <style>
     :root {
       --dark-blue: #000025;
@@ -24,6 +22,12 @@
       padding: 0;
     }
 
+    *,
+    ::before,
+    ::after {
+      box-sizing: border-box;
+    }
+
     .main {
       height: 100%;
       background-image: url("./assets/right_faced_rhino.webp"), url("./assets/left_faced_rhino.webp");
@@ -32,7 +36,7 @@
       background-position: left bottom, right top;
       max-width: 1200px;
       margin: 0 auto;
-      /* background-origin: ; */
+      position: relative;
     }
 
     .content {
@@ -50,17 +54,50 @@
       color: var(--red);
       font-size: 30px;
     }
+
+    article {
+      --s0: calc(#{1.25em} + #{6px});
+      --s1: calc(#{1.25em} + #{6px} + #{.5em});
+      place-self: center;
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      width: 300px;
+      height: 300px;
+      border: solid 0 transparent;
+      border-width: 0 30px 30px 0;
+      padding: 40px 30px 30px 66px;
+      background: var(--blue) padding-box;
+      color: var(--yellow);
+    }
+
+    article::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: inherit;
+      border-width: 30px 0 0 30px;
+      width: 300px;
+      height: 300px;
+      box-shadow: inset 0 0 0 6px var(--blue);
+      mix-blend-mode: difference;
+      pointer-events: none;
+      content: ''
+    }
   </style>
 </head>
 
 <body>
-  <!--     <div id="root"></div> -->
   <main class="main">
-    <!-- <img src="./assets/web_layout.webp" /> -->
     <div class="content">
       <h1 class="name">Arunkumar</h1>
       <h3 class="likes">CSS Lover</h3>
     </div>
+
+    <article>
+      <h3>Important Note : -</h3>
+      <h2>I built Web Applications too ...</h2>
+    </article>
   </main>
 </body>
 
